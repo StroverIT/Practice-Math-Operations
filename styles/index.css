@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+     background-image: linear-gradient(rgb(20, 19, 19),rgb(60, 60, 218));
+     color: white;
+}
+.main-section{
+    width: 100vw;
+    height: 100vh;
+}
+.list-items ul {
+    list-style-type: none;  
+
+}
+.list-items ul li{
+    text-align: center;
+
+}
+.list-items ul li a{
+    text-decoration: none;
+    color: rgb(196, 191, 191);
+
+}
+.list-items ul li a:hover{
+    color:white;
+}
