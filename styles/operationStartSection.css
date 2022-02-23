@@ -1,0 +1,9 @@
+#startedGame{
+    height: 100vh;
+}
+
+.inputs input{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}

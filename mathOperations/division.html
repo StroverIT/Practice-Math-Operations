@@ -10,7 +10,9 @@
       <script src="https://kit.fontawesome.com/25c540140f.js" crossorigin="anonymous"></script>
      <!-- Custom styles -->
      <link rel="stylesheet" href="../styles/mathOperationsIndex.css">
-    <title>Document</title>
+     <link rel="stylesheet" href="../styles/operationStartSection.css">
+
+    <title>Division</title>
 </head>
 <body>
     <section class="text-center">
@@ -21,8 +23,26 @@
             <h2>Цъкни бутон за да започнеш игра...</h1>
             <!-- Като е за телефон направи да се цъка бутон за да се започне игра -->
     </section>
-    <section id="startedGame" class="division">
+    <section id="startedGame" class="division d-none d-flex flex-column justify-content-center align-items-center">
+        <div class="operationInput">
+    
+        </div>
+        <div class="inputValue">
+                <div>
+                    <div class="valid"></div>
+                    <div class="invalid"></div>
+                    <div class="output"></div>
+                </div>
+            <div class="d-flex inputs">
+                <div>
+                    <input type="number" placeholder="Въведи число">
+                </div>
+            <div>
+                 <button class="btn btn-success">Потвърди</button>
+             </div>
+    </div>
 
+        </div>
     </section>
     </section>
 </body>
