@@ -1,12 +1,18 @@
 $(document).ready(function () {
-  $("body").keypress(function (e) {
-    const currentPage = e.target;
+  $("body").keypress(function () {
+    onPressStart()
+  });
+  $("body").click(function(){
+    onPressStart()
+  })
+});
+function onPressStart(){
+  const currentPage = $("body");
     const typeOperation = $(currentPage).find("#startedGame")[0].classList[0];
     $(".main-section").remove();
     startGame(typeOperation);
-    $(this).unbind();
-  });
-});
+    currentPage.unbind()
+}
 // Variables
 let inputs
 
