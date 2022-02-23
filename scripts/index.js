@@ -23,7 +23,7 @@ const textPara = document.querySelector(".fancyParagraph")
 const strTextPara = textPara.textContent
 const splitTextPara = strTextPara.split("")
 textPara.textContent = ""
-function test(){
+function first(){
 
     for(let i = 0; i < splitTextPara.length;i++){
         textPara.innerHTML += `<span>${splitTextPara[i]}</span>`
@@ -31,11 +31,22 @@ function test(){
    
     let timerOne = setInterval(() => onTick(textPara, splitTextPara, timerOne), 50)
 }
+const fancyList = $(".fancyList ul li")
 
+
+function second(){
+    fancyList.each(function(index) {        
+        var that = this;
+        var t = setTimeout(function() { 
+            console.log(that);
+            $(that).removeClass("cHidden"); 
+            $(that).addClass("cFading")
+        }, 500 * index);        
+    });
+}
 
 function onTick(el, elArr,t){
     const span = el.querySelectorAll("span")[char]
-    console.log(char);
     span.classList.add("fading")
     char++
     if(char === elArr.length){
@@ -43,11 +54,12 @@ function onTick(el, elArr,t){
             case 0:
                 console.log("FINISHED");
            char = 0 
-            
-            test()
-
+            first()
             break
             case 1:
+                console.log("FINISHED2");
+                second()
+                break
         }
         currentState++
         complete(t)

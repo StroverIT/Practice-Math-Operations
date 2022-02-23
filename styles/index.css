@@ -23,9 +23,15 @@ header h1{
     text-align: center;
 
 }
+.list-items ul li {
+    margin-top:20px;
+
+}
 .list-items ul li a{
     text-decoration: none;
     color: rgb(196, 191, 191);
+    font-size: 1.25rem;
+    font-weight: 500;
 
 }
 .list-items ul li a:hover{
@@ -40,4 +46,11 @@ span{
 span.fading{
     opacity: 1;
 
+}
+.cHidden{
+    opacity: 0;
+}
+.cFading{
+    transition: all 1s ease;
+    opacity: 1;
 }
