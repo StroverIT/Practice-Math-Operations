@@ -10,8 +10,10 @@ body{
     width: 100vw;
     height: 100vh;
 }
-.main-section h1{
+header h1{
     color: rgb(255, 178, 35);
+    font-size: 3rem;
+
 }
 .list-items ul {
     list-style-type: none;  
@@ -28,4 +30,14 @@ body{
 }
 .list-items ul li a:hover{
     color:white;
+}
+
+span{
+    opacity: 0;
+    transition: all 1s ease;
+    
+}
+span.fading{
+    opacity: 1;
+
 }
