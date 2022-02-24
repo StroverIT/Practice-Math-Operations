@@ -1,5 +1,7 @@
 
 
+$(document).ready(function () {
+
 // Local variables
 let isFinished = {
     first: false,
@@ -70,4 +72,4 @@ function complete(t){
     clearInterval(t)
     t = null
 }
-
+})
