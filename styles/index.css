@@ -2,9 +2,12 @@
     margin:0;
     padding:0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
 body{
      background-image: linear-gradient(rgb(20, 19, 19),rgb(60, 60, 218));
      color: white;
+     font-family: 'Roboto', sans-serif;
 }
 .main-section{
     width: 100vw;
@@ -12,27 +15,30 @@ body{
 }
 header h1{
     color: rgb(255, 178, 35);
-    font-size: 3rem;
+    font-size: clamp(1.5rem,5vw,4rem);
+}
+header p{
+    font-size: clamp(1.25rem,4vw,1.5rem);
 
+    font-weight: 450;
 }
 .list-items ul {
     list-style-type: none;  
-
-}
-.list-items ul li{
-    text-align: center;
+    padding: 0;
 
 }
 .list-items ul li {
+   
     margin-top:20px;
-
+    border-radius: 10px;
+    padding: 2px 20px;
+    background-color: rgb(31, 62, 146);
 }
 .list-items ul li a{
     text-decoration: none;
     color: rgb(196, 191, 191);
-    font-size: 1.25rem;
+    font-size: clamp(1rem,3vw,1.5rem);
     font-weight: 500;
-
 }
 .list-items ul li a:hover{
     color:white;

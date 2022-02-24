@@ -25,6 +25,7 @@ body{
 }
 .operations-section ul{
     list-style-type: none;
+    padding: 0;
 }
 .operations-section ul li a{
     color: rgb(207, 192, 192);
