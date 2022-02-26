@@ -7,29 +7,57 @@ $(document).ready(function () {
   })
 });
 function onPressStart(){
-  const currentPage = $("body");
-    const typeOperation = $(currentPage).find("#startedGame")[0].classList[0];
     $(".main-section").remove();
     startGame(typeOperation);
     currentPage.unbind()
 }
-// Variables
-let inputs
+// Global variables
+const currentPage = $("body");
+const typeOperation = $(currentPage).find("#startedGame")[0].classList[0];
+let inputs,isStarted,correct,incorrect,time
+const timer = $(".time")
+
+const input = $(".inputValue input")
+const btn = $(".inputValue button")
+
+input.keypress(function(e){
+  if(!isStarted){
+    console.log("started");
+    isStarted = true
+    startTimer()
+  }
+})
+ 
+function startTimer(){
+  const secondsLeft = setInterval(function(){
+   time-=1
+   timer.text(`${time} секунди`)
+   if(time == 58){
+    clearInterval(secondsLeft)
+    console.log("END of the game");
+    endGame()
+  }
+  }, 1000)
+
+}
 
 function randomNum(num) {
   return Math.floor(Math.random() * num);
 }
 function startGame(typeOperation) {
- 
+  $(".endGame").remove()
   const startedSection = $("#startedGame");
-  
+  isStarted = false
+  time = 60
+  correct = 0   
+  incorrect = 0
+  timer.text(`${time} секунди`)
   // If checker for section is hidden
   if (startedSection.hasClass("d-none")) {
     startedSection.removeClass("d-none");
   }
 
-  const input = $(".inputValue input")
-  const btn = $(".inputValue button")
+ 
   input.focus()
   
   newOperation(typeOperation)
@@ -101,6 +129,7 @@ function checker(typeOperation){
     if(valid.text() <= 0){
     validNum = Number(valid.text())
     }
+    correct+=1
     // Output
     valid.text(`Верни: ${validNum + 1}`)
   }
@@ -111,9 +140,11 @@ function checker(typeOperation){
     if(invalid.text() <= 0){
       invalidNum = Number(invalid.text())
     }
+    incorrect+=1
     // Output
     invalid.text(`Грешни: ${invalidNum + 1}`)
   }
+  console.log(correct,incorrect);
   userInput.val("") 
   userInput.focus()
   newOperation(typeOperation)
@@ -125,4 +156,15 @@ function newOperation(typeOperation){
   inputs = operationCalc(typeOperation)
   output.text(`${inputs.firstNum} ${inputs.icon} ${inputs.secondNum}`)
   
+}
+function endGame(){
+  $("body").prepend(`
+  <section class="endGame">
+
+  <button class="btn btn-success" id="startNewGame">Нова игра</button>
+  </section>
+  `)
+  $("#startNewGame").click(()=>startGame(typeOperation))
+
+  console.log(correct,incorrect);
 }
