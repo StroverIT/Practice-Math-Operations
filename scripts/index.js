@@ -8,6 +8,11 @@ let isFinished = {
     second: false,
 }
 
+const skipButton = $(".skipAnimation")
+skipButton.click(function(){
+    $(".cHidden").removeClass("cHidden")
+    skipButton.remove()
+})
 let currentState = 0
 
 const text = document.querySelector(".fancyHeader")
@@ -45,6 +50,7 @@ function second(){
             $(that).addClass("cFading")
         }, 500 * index);        
     });
+    skipButton.remove()
 }
 
 function onTick(el, elArr,t){

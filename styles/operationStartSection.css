@@ -1,9 +1,56 @@
 #startedGame{
     height: 100vh;
 }
+.results{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.valid{
+    color:rgb(26, 228, 26);
+}
+.invalid{
+    color:rgb(225, 77, 77);
+}
+.output{
+    font-size: clamp(1.5rem,4vw,2rem);
+
+}
+
+.inputs{
+    flex-direction: column;
+    padding:20px;
+}
 
 .inputs input{
     height: 100%;
     width: 100%;
     text-align: center;
+    background-color: transparent;
+    padding:20px;
+    border-radius: 400px !important;
+
+    margin-bottom:20px;
+    background-color:rgb(76, 76, 216);;
+    color: white;
+    border: 0;
+    font-size: clamp(0.85rem,4vw,1.5rem);
+
+    /* caret-color: red; */
+}
+.inputs input::placeholder{
+    color: white;
+
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+input:focus::placeholder {
+    color: transparent;
+    
+  }
+.submit button{
+    padding: clamp(0.85rem, 1rem, 3rem);
+    font-size: clamp(0.85rem,4vw,1.5rem);
+
+    border-radius: 400px !important;
 }

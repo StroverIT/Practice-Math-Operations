@@ -2,6 +2,11 @@
 
 $(document).ready(function () {
 
+    const skipButton = $(".skipAnimation")
+skipButton.click(function(){
+    $(".cHidden").removeClass("cHidden")
+    skipButton.remove()
+})
     // Local variables
     let isFinished = {
         first: false,
@@ -13,6 +18,7 @@ $(document).ready(function () {
     const text = document.querySelector(".fancyHeader")
     const strText = text.textContent
     const splitText = strText.split("")
+    
     text.textContent = ""
     for(let i = 0; i < splitText.length;i++){
         text.innerHTML += `<span>${splitText[i]}</span>`
@@ -33,6 +39,8 @@ $(document).ready(function () {
                 $(that).addClass("cFading")
             }, 500 * index);        
         });
+    skipButton.remove()
+
     }
     
     function onTick(el, elArr,t){
