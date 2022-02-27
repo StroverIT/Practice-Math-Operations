@@ -33,7 +33,7 @@ function startTimer(){
   const secondsLeft = setInterval(function(){
    time-=1
    timer.text(`${time} секунди`)
-   if(time == 59){
+   if(time == 0){
     clearInterval(secondsLeft)
     console.log("END of the game");
     endGame()
