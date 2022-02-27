@@ -59,7 +59,10 @@ input:focus::placeholder {
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 50vw;
-    height: 50vh;
-    background-color: black;
+    /* width: 50vw;
+    height: 50vh; */
+    max-width: 500px;
+    background-color: rgb(59, 48, 73);
+    border-radius: 200px;
+    box-shadow: 10px 10px 200px 30px rgb(75, 74, 80);
 }

@@ -14,25 +14,26 @@ function onPressStart(){
 // Global variables
 const currentPage = $("body");
 const typeOperation = $(currentPage).find("#startedGame")[0].classList[0];
-let inputs,isStarted,correct,incorrect,time
-const timer = $(".time")
 
+let inputs,isStarted,correct,incorrect,time
+
+const valid = $('.valid')
+  const invalid = $(".invalid")
+const timer = $(".time")
 const input = $(".inputValue input")
 const btn = $(".inputValue button")
+const userInput = $(".inputs input")
+
 
 input.keypress(function(e){
-  if(!isStarted){
-    console.log("started");
-    isStarted = true
-    startTimer()
-  }
+  
 })
  
 function startTimer(){
   const secondsLeft = setInterval(function(){
    time-=1
    timer.text(`${time} секунди`)
-   if(time == 58){
+   if(time == 59){
     clearInterval(secondsLeft)
     console.log("END of the game");
     endGame()
@@ -41,12 +42,17 @@ function startTimer(){
 
 }
 
-function randomNum(num) {
-  return Math.floor(Math.random() * num);
-}
 function startGame(typeOperation) {
+  if(!isStarted){
+    console.log("started");
+    isStarted = true
+    startTimer()
+  }
   $(".endGame").remove()
   const startedSection = $("#startedGame");
+  userInput.val("")
+  valid.text(`Верни: 0`)
+  invalid.text(`Грешни: 0`)
   isStarted = false
   time = 60
   correct = 0   
@@ -119,30 +125,19 @@ function operationCalc(typeOperation) {
 // CHECKER
 
 function checker(typeOperation){
-  const userInput = $(".inputs input")
-  const valid = $('.valid')
-  const invalid = $(".invalid")
+  
   // Valid
   if(inputs.result == userInput.val()){
-    let validNum
-    validNum = Number(valid.text().split(": ")[1])
-    if(valid.text() <= 0){
-    validNum = Number(valid.text())
-    }
     correct+=1
     // Output
-    valid.text(`Верни: ${validNum + 1}`)
+    valid.text(`Верни: ${correct}`)
   }
   // Invalid
   if(inputs.result != userInput.val()){
-  let invalidNum
-  invalidNum = Number(invalid.text().split(": ")[1])
-    if(invalid.text() <= 0){
-      invalidNum = Number(invalid.text())
-    }
+
     incorrect+=1
     // Output
-    invalid.text(`Грешни: ${invalidNum + 1}`)
+    invalid.text(`Грешни: ${incorrect}`)
   }
   console.log(correct,incorrect);
   userInput.val("") 
@@ -157,11 +152,27 @@ function newOperation(typeOperation){
   output.text(`${inputs.firstNum} ${inputs.icon} ${inputs.secondNum}`)
   
 }
+function randomNum(num) {
+  return Math.floor(Math.random() * num);
+}
+
 function endGame(){
   $("body").prepend(`
-  <section class="endGame">
-
-  <button class="btn btn-success" id="startNewGame">Нова игра</button>
+  <section class="endGame d-flex justify-content-center align-items-center flex-column h-50 w-100">
+    <section class="end__information ">
+      <div class="valid">
+      Верни: ${correct}
+      </div>
+      <div class="invalid">
+      Грешни: ${incorrect}
+      </div>
+      <div>
+      Среден резултат: ${correct > 0 && incorrect > 0 ? correct/ incorrect: correct}
+      </div>
+    </section>
+     <section class="end__buttons">
+        <button class="btn btn-success" id="startNewGame">Нова игра</button>
+     <section>
   </section>
   `)
   $("#startNewGame").click(()=>startGame(typeOperation))
