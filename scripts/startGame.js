@@ -167,7 +167,7 @@ function endGame(){
       Грешни: ${incorrect}
       </div>
       <div>
-      Среден резултат: ${correct > 0 && incorrect > 0 ? correct/ incorrect: correct}
+      Среден резултат: ${correct > 0 && incorrect > 0 ? correct- incorrect: correct}
       </div>
     </section>
      <section class="end__buttons">
