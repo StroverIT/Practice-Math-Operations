@@ -1,8 +1,11 @@
 $(document).ready(function () {
   $("body").keypress(function () {
+    console.log("READY");
     onPressStart()
   });
   $("body").click(function(){
+    console.log("READY");
+
     onPressStart()
   })
 });
@@ -35,7 +38,6 @@ function startTimer(){
    timer.text(`${time} секунди`)
    if(time == 0){
     clearInterval(secondsLeft)
-    console.log("END of the game");
     endGame()
   }
   }, 1000)
@@ -44,7 +46,6 @@ function startTimer(){
 
 function startGame(typeOperation) {
   if(!isStarted){
-    console.log("started");
     isStarted = true
     startTimer()
   }
@@ -54,7 +55,7 @@ function startGame(typeOperation) {
   valid.text(`Верни: 0`)
   invalid.text(`Грешни: 0`)
   isStarted = false
-  time = 60
+  time = 10
   correct = 0   
   incorrect = 0
   timer.text(`${time} секунди`)
@@ -63,17 +64,19 @@ function startGame(typeOperation) {
     startedSection.removeClass("d-none");
   }
 
- 
   input.focus()
   
   newOperation(typeOperation)
-  console.log(inputs);
-  btn.click(()=> checker(typeOperation))
-  $(document).keypress(function(e){
-    if(e.keyCode === 13 || e.keyCode ===32){
-      checker(typeOperation)
-    }
-  })
+  const eventObject = $._data(btn[0], "events")
+  if(eventObject == undefined){
+    btn.click(()=> checker(typeOperation))
+    $(document).keypress(function(e){
+      if(e.keyCode === 13 || e.keyCode ===32){
+        checker(typeOperation)
+      }
+    })
+  }
+
 }
 function operationCalc(typeOperation) {
   let result, firstNum, secondNum, icon;
@@ -103,12 +106,10 @@ function operationCalc(typeOperation) {
       secondNum = randomNum(10);
       while (secondNum <= 0) {
         secondNum = randomNum(10);
-        console.log("BUG1");
       }
       firstNum = secondNum * randomNum(10);
       while (firstNum <= 0) {
         firstNum = secondNum * randomNum(10);
-        console.log("BUG2");
       }
       icon = "/"
       result = firstNum / secondNum;
@@ -177,5 +178,4 @@ function endGame(){
   `)
   $("#startNewGame").click(()=>startGame(typeOperation))
 
-  console.log(correct,incorrect);
 }
