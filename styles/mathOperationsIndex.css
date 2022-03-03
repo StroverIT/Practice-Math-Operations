@@ -75,3 +75,15 @@ span.fading{
     transition: all 1s ease;
     opacity: 1;
 }
+.skipAnimation{
+    margin-left: 30%;
+}
+.skipBtn{
+    color:orange;
+    border: 2px solid orange;
+}
+
+.skipBtn:hover{
+color:orange;
+    transform: scale(1);
+}
