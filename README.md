@@ -1,2 +1,2 @@
 # Practice-Math-Operations
-Here you can practice math 
+There are multiple versions of this project. The best one for now is version one and fully completed
