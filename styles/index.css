@@ -5,7 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 body{
-     background-image: linear-gradient(rgb(20, 19, 19),rgb(60, 60, 218));
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(29, 29, 113, 1) 24%, rgba(0, 212, 255, 1) 100%); */
+     background-image: linear-gradient(rgb(60, 60, 218),rgb(20, 19, 19));
+     /* background-image: linear-gradient(rgb(20, 19, 19),rgb(60, 60, 218)); */
      color: white;
      font-family: 'Roboto', sans-serif;
 }

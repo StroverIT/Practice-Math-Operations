@@ -7,11 +7,7 @@ skipButton.click(function(){
     $(".cHidden").removeClass("cHidden")
     skipButton.remove()
 })
-    // Local variables
-    let isFinished = {
-        first: false,
-        second: false,
-    }
+ 
     
     let currentState = 0
     
@@ -34,7 +30,6 @@ skipButton.click(function(){
         fancyList.each(function(index) {        
             var that = this;
             var t = setTimeout(function() { 
-                console.log(that);
                 $(that).removeClass("cHidden"); 
                 $(that).addClass("cFading")
             }, 500 * index);        
@@ -50,12 +45,10 @@ skipButton.click(function(){
         if(char === elArr.length){
             switch(currentState){
                 case 0:
-                    console.log("FINISHED");
                char = 0 
                 first()
                 break
                 case 1:
-                    console.log("FINISHED2");
                     second()
                     break
             }
