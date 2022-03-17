@@ -1,0 +1,19 @@
+{
+  "name": "practice-math-operations",
+  "version": "1.0.0",
+  "description": "This version is using Modular Programming and page.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StR0vErBG/Practice-math-operations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StR0vErBG/Practice-math-operations/issues"
+  },
+  "homepage": "https://github.com/StR0vErBG/Practice-math-operations#readme"
+}
