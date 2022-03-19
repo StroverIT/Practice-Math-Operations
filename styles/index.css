@@ -1,3 +1,6 @@
 body{
     background-color: rgb(124, 124, 255) !important;
 }
+.return-arrow{
+    transform: rotate(90deg);
+}

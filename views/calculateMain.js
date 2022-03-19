@@ -2,7 +2,7 @@
 import {render, html} from "../node_modules/lit-html/lit-html.js"
 const calculateTemplate = () => html`
 <div>
-<a href="/"><i class="fa-solid fa-arrow-turn-down"></i></a>
+<a href="/" ><i class="fa-solid fa-arrow-turn-down return-arrow"></i></a>
         <h1>Изберете типа на математическата операция</h1>
         <ul>
             <li><a href="/calculate/addition">Събиране</a></li>
