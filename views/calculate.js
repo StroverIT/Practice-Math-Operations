@@ -1,5 +1,6 @@
 import {render, html} from "../node_modules/lit-html/lit-html.js"
 const root = document.querySelector("#root")
+
 const calcTemplate = (operation) => html`
    <section>
 <a href="/calculatePage"><i class="fa-solid fa-arrow-turn-down return-arrow"></i></a>
@@ -28,17 +29,22 @@ export const calcOperationView = (ctx) => {
 
 // ------------Event listeners --------------
 function submitFnc(){
-    const input = Number(document.querySelector("#submitInput").value)
+    console.log("CLICKEd");
+    // Fix Input write it as component 
+    const input = document.querySelector("#submitInput")
+    
     const result = currOperations.result
     const mistakes = currOperations.mistakes 
     const corrects = currOperations.corrects
 
-    input!=result ?currOperations.mistakes = mistakes+1 : currOperations.corrects = corrects +1
+    Number(input.value)!=result ?currOperations.mistakes = mistakes+1 : currOperations.corrects = corrects +1
    const newValues = typeOperations[currOperations.type]()
    for(let value in newValues){
        currOperations[value] = newValues[value]
    }
    render(calcTemplate(currOperations), root)
+   input.focus()
+    input.value = ""
 
 }
 
