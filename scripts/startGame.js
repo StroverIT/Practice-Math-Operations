@@ -55,7 +55,7 @@ function startGame(typeOperation) {
   valid.text(`Верни: 0`)
   invalid.text(`Грешни: 0`)
   isStarted = false
-  time = 10
+  time = 60
   correct = 0   
   incorrect = 0
   timer.text(`${time} секунди`)
