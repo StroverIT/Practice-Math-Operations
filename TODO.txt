@@ -1,0 +1,6 @@
+
+[  ] After finishing the level show menu where show the score, button for restart the game and next level.
+- Show average score between right and wrong answers and if, else if, else statement. 
+Example: 
+a) If( avgScore < 10 ) "You are below average"
+b) else if( avgScore >= 20 && avgScore < 30 ) "You are average"

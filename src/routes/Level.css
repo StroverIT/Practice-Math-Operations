@@ -1,0 +1,49 @@
+body, *,*::after,*::before, html{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: rgb(136, 82, 82);
+
+}
+
+.level--container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color:white;
+}
+.game--display{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.game--display input{
+    border: 0;
+    border-radius: 20px;
+    height: 70px;
+    background-color: #4C4CD8;
+    text-align: center;
+}
+.game--display input::placeholder{
+    color: white;
+
+}
+.game--display textarea:focus, input:focus{
+    color:white;
+    outline: none;
+}
+.game--display input:focus::placeholder {
+    color: transparent;
+    
+  }
+.game--display button {
+    border:0;
+    border-radius: 20px;
+    background-color:  #198754;
+    cursor: pointer;
+}
